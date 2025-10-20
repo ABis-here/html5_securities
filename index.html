@@ -1,13 +1,68 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puslapis kuriamas | Augustas Baublys</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/565/565547.png" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 500px;
+    }
+    .loader {
+      margin-top: 30px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid var(--accent);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 Puslapis kuriamas...</h1>
+  <p>Šiuo metu vyksta darbai. Greitu metu čia atsiras naujas projektas.</p>
+  <div class="loader"></div>
+
+  <footer>© <span id="year"></span> Augustas Baublys</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
